@@ -1,0 +1,19 @@
+name: Examples for those who want to exclude some branches/tags
+
+on: 
+  delete
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: jmatsu/dg-delete-distribution@master
+      with:
+        app_owner_name: red_fat_daruma
+        platform: android
+        app_id: io.material.catalog
+        api_token: ${{ secrets.DEPLOYGATE_API_TOKEN }}
+        exclude_pattern: (release|master)
+        ignore_api_failure: true

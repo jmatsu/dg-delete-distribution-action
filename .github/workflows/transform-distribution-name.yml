@@ -1,0 +1,26 @@
+name: Examples for those who want to transform distribution names
+
+on: 
+  delete
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+    - uses: ./.github/actions/transform-ref
+      id: tranform-ref
+    - uses: jmatsu/dg-delete-distribution@master
+      with:
+        app_owner_name: jmatsu-dg
+        platform: android
+        app_id: com.deploygate.gradlesample.p1
+        api_token: ${{ secrets.DEPLOYGATE_API_TOKEN }}
+        distribution_name: ${{ steps.tranform-ref.outputs.distribution_name }}
+        ignore_api_failure: true
+      env:
+        DEBUG: true
