@@ -114,7 +114,7 @@ ignore_api_failure=$ignore_api_failure
 EOF
 
 curl -sSL \
-  -A "dg-destroy-distribution-action/$(cat /VERSION) (GithubAction; jmatsu/dg-destroy-distribution-action)" \
+  -A "dg-delete-distribution-action/$(cat /VERSION) (GithubAction; jmatsu/dg-delete-distribution-action)" \
   -H "Authorization: token $api_token" \
   -X DELETE \
   "https://deploygate.com/api/users/$app_owner_name/platforms/$platform/apps/$app_id/distributions" \

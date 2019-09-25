@@ -4,7 +4,7 @@ This action deletes a *distribution* from DeployGate on branch-delete. (Not offi
 
 ## Versions
 
-See [Releases](https://github.com/jmatsu/dg-delete-distribution/releases) page.
+See [Releases](https://github.com/jmatsu/dg-delete-distribution-action/releases) page.
 
 ## Inputs and Outpus
 
@@ -22,7 +22,7 @@ on:
 Add this action to steps.
 
 ```
-uses: jmatsu/dg-delete-distribution@<version>
+uses: jmatsu/dg-delete-distribution-action@<version>
   with:
     app_owner_name: <your DeployGate account/organization name>
     platform: <android|ios>

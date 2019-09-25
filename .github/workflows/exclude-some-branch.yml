@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: jmatsu/dg-delete-distribution@master
+    - uses: jmatsu/dg-delete-distribution-action@master
       with:
         app_owner_name: red_fat_daruma
         platform: android
