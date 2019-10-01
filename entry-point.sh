@@ -16,13 +16,6 @@ readonly action_version="$(cat /VERSION)"
 
 github::debug "the action version is $action_version"
 
-event_ref_type="$(jq --raw-output .ref_type "$GITHUB_EVENT_PATH")"
-
-if [[ "$event_ref_type" != "branch" ]]; then
-  github::warning "deletee is not a branch but $event_ref_type. This action does nothing."
-  github::success
-fi
-
 event_ref="$(jq --raw-output .ref "$GITHUB_EVENT_PATH")"
 distribution_name="${INPUT_DISTRIBUTION_NAME:-${event_ref}}"
 
