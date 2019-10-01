@@ -16,11 +16,9 @@ jobs:
       id: tranform-ref
     - uses: jmatsu/dg-delete-distribution-action@master
       with:
-        app_owner_name: jmatsu-dg
+        app_owner_name: xxxxxx
         platform: android
-        app_id: com.deploygate.gradlesample.p1
+        app_id: x.y.z
         api_token: ${{ secrets.DEPLOYGATE_API_TOKEN }}
         distribution_name: ${{ steps.tranform-ref.outputs.distribution_name }}
         ignore_api_failure: true
-      env:
-        DEBUG: true

@@ -11,9 +11,9 @@ jobs:
     steps:
     - uses: jmatsu/dg-delete-distribution-action@master
       with:
-        app_owner_name: red_fat_daruma
+        app_owner_name: xxxxxx
         platform: android
-        app_id: io.material.catalog
+        app_id: x.y.z
         api_token: ${{ secrets.DEPLOYGATE_API_TOKEN }}
         exclude_pattern: (release|master)
         ignore_api_failure: true

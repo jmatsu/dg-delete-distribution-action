@@ -13,6 +13,8 @@ RUN ln -s /jq /usr/bin/jq
 
 COPY VERSION /VERSION
 
+COPY toolkit.sh /toolkit.sh
+
 COPY entry-point.sh /entry-point.sh
 RUN chmod +x /entry-point.sh
 
