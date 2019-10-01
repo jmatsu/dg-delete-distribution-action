@@ -28,8 +28,6 @@ uses: jmatsu/dg-delete-distribution-action@<version>
     platform: <android|ios>
     app_id: <package name|bundle identifier>
     api_token: ${{ secrets.DEPLOYGATE_API_TOKEN }} # for example
-  env:
-    DEBUG: true # keep true iff you want to see logs
 ```
 
 For more detail, please read *action.yml* and [workflow examples](.github/workflows)
