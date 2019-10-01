@@ -1,7 +1,7 @@
 name: For testing
 
 on: 
-  delete
+  push
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
         fetch-depth: 1
     - name: Upload an app and create a distribution
       run: 'curl -X POST -H "Authorization: token ${{ secrets.DEPLOYGATE_API_TOKEN }}" "https://deploygate.com/api/users/${{ secrets.TEST_USER_NAME }}/apps" -F file=@./.github/workflows/app.apk -F distribution_name=test_via_action'
-    - uses: jmatsu/dg-delete-distribution-action@master
+    - uses: ./
       with:
         app_owner_name: ${{ secrets.TEST_USER_NAME }}
         platform: android
